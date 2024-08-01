@@ -14,26 +14,26 @@ export const BASEL = [
           'Duke of Basel',
           'Italian merchant Basel',
         ],
-        answer: 'Celtic chief Basilisk',
+        correct: 'Celtic chief Basilisk',
       },
       {
         id: '1.2',
         question:
           'What date is considered the official day of foundation of the city of Basel?',
         options: ['100 BC', '200 AD', '500 AD', '800 AD'],
-        answer: '100 BC',
+        correct: '100 BC',
       },
       {
         id: '1.3',
         question: 'What river flows through the city of Basel?',
         options: ['Rhine', 'Danube', 'Hay', 'Thames'],
-        answer: 'Rhine',
+        correct: 'Rhine',
       },
       {
         id: '1.4',
         question: 'What does the coat of arms of the city of Basel symbolize?',
         options: ['Lion', 'Eagle', 'Bear', 'Dragon'],
-        answer: 'Lion',
+        correct: 'Lion',
       },
       {
         id: '1.5',
@@ -45,7 +45,7 @@ export const BASEL = [
           'Fort Albert',
           'Martin Tower',
         ],
-        answer: 'Martin Tower',
+        correct: 'Martin Tower',
       },
       {
         id: '1.6',
@@ -56,7 +56,7 @@ export const BASEL = [
           'From the French "Bâle"',
           'From the Italian "Basile"',
         ],
-        answer: 'From the Latin "Basilea"',
+        correct: 'From the Latin "Basilea"',
       },
       {
         id: '1.7',
@@ -68,7 +68,7 @@ export const BASEL = [
           'In the Renaissance',
           'In the 19th century',
         ],
-        answer: 'In the Middle Ages',
+        correct: 'In the Middle Ages',
       },
       {
         id: '1.8',
@@ -80,7 +80,7 @@ export const BASEL = [
           'Center of cultural exchange with other countries',
           'Place of large celebrations and festivals',
         ],
-        answer: 'Mecca for artists and poets',
+        correct: 'Mecca for artists and poets',
       },
       {
         id: '1.9',
@@ -92,7 +92,7 @@ export const BASEL = [
           'Collected taxes and managed the municipality',
           'Represented the artistic elite of the city at royal receptions',
         ],
-        answer: 'Collected taxes and managed the municipality',
+        correct: 'Collected taxes and managed the municipality',
       },
       {
         id: '1.10',
@@ -104,7 +104,7 @@ export const BASEL = [
           'She contributed to the spread of humane philosophy in hideous countries',
           'She was the founder of new teaching methods',
         ],
-        answer: 'It was one of the central points of the Renaissance in Europe',
+        correct: 'It was one of the central points of the Renaissance in Europe',
       },
     ],
   },
@@ -116,7 +116,7 @@ export const BASEL = [
         id: '2.1',
         question: 'What activity did Basel prefer in the Middle Ages?',
         options: ['Trade', 'Agriculture', 'Crafts', 'Military affairs'],
-        answer: 'Trade',
+        correct: 'Trade',
       },
       {
         id: '2.2',
@@ -127,14 +127,14 @@ export const BASEL = [
           'Center for the production of goods',
           'Trade union with other cities',
         ],
-        answer: 'Transit point on trade routes',
+        correct: 'Transit point on trade routes',
       },
       {
         id: '2.3',
         question:
           'What architectural structure became a symbol of the cultural development of Basel in the Middle Ages?',
         options: ['Cathedral', 'Town Hall', 'Fountain', 'Castle'],
-        answer: 'Cathedral',
+        correct: 'Cathedral',
       },
       {
         id: '2.4',
@@ -146,7 +146,7 @@ export const BASEL = [
           'Promoted new artistic movements',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
       {
         id: '2.5',
@@ -157,7 +157,7 @@ export const BASEL = [
           'Involvement of scientists and artists from all over the world',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
       {
         id: '2.6',
@@ -169,7 +169,7 @@ export const BASEL = [
           'Distribution of books and manuscripts',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
       {
         id: '2.7',
@@ -181,7 +181,7 @@ export const BASEL = [
           'Developing skill in wooden construction',
           'All of the above',
         ],
-        answer: 'Combining elements of the Romanesque and Gothic styles',
+        correct: 'Combining elements of the Romanesque and Gothic styles',
       },
       {
         id: '2.8',
@@ -193,7 +193,7 @@ export const BASEL = [
           'Services of intermediaries in trade transactions',
           'All of the above',
         ],
-        answer: 'Geographical position at the crossroads of trade routes',
+        correct: 'Geographical position at the crossroads of trade routes',
       },
       {
         id: '2.9',
@@ -205,7 +205,7 @@ export const BASEL = [
           'Forming architectural ensembles and sculptural compositions',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
       {
         id: '2.10',
@@ -217,7 +217,7 @@ export const BASEL = [
           'Distribution of manuscript samples throughout Europe',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
     ],
   },
@@ -236,7 +236,7 @@ export const BASEL = [
           'The city was a place of strong religious conflict',
           'The city played a minor role in religious transformations',
         ],
-        answer: 'The city was the center of the Protestant movement',
+        correct: 'The city was the center of the Protestant movement',
       },
       {
         id: '3.2',
@@ -248,7 +248,7 @@ export const BASEL = [
           'Political changes that contributed to the introduction of the Reformation',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
       {
         id: '3.3',
@@ -260,7 +260,7 @@ export const BASEL = [
           'The city actively participated in solving religious issues',
           'The city ignored religious discussions',
         ],
-        answer:
+        correct:
           'The city became a center of debate between reformers and Catholics',
       },
       {
@@ -273,7 +273,7 @@ export const BASEL = [
           'Basel became the place of emancipation of women reformers',
           'All of the above',
         ],
-        answer:
+        correct:
           'The city publishing house printed and distributed the works of the reformers',
       },
       {
@@ -286,7 +286,7 @@ export const BASEL = [
           'Opposed any religious changes',
           'All of the above',
         ],
-        answer: 'Actively supported reformist ideas',
+        correct: 'Actively supported reformist ideas',
       },
       {
         id: '3.6',
@@ -298,7 +298,7 @@ export const BASEL = [
           'Tried to maintain a balance between the Reformed and Catholics',
           'All of the above',
         ],
-        answer:
+        correct:
           'Tried to maintain a balance between the Reformed and Catholics',
       },
       {
@@ -311,7 +311,7 @@ export const BASEL = [
           'Did not have a significant impact on the cultural life of Basel',
           'Stimulated the development of new cultural forms',
         ],
-        answer:
+        correct:
           'Contributed to the development of Latin literature and education',
       },
       {
@@ -324,7 +324,7 @@ export const BASEL = [
           'Influenced the formation of religious polemics and discussions',
           'All of the above',
         ],
-        answer: 'All of the above',
+        correct: 'All of the above',
       },
       {
         id: '3.9',
@@ -336,7 +336,7 @@ export const BASEL = [
           'It did not significantly affect the economic condition of the city',
           'It led to the enrichment of elites and the deepening of social inequalities',
         ],
-        answer: 'Contributed to economic growth by attracting new investors',
+        correct: 'Contributed to economic growth by attracting new investors',
       },
       {
         id: '3.10',
@@ -348,7 +348,7 @@ export const BASEL = [
           'Lost its influence on the further spread of the Reformation',
           'All of the above',
         ],
-        answer: 'Became a center from which reformed principles spread',
+        correct: 'Became a center from which reformed principles spread',
       },
     ],
   },
@@ -366,7 +366,7 @@ export const BASEL = [
           'Leonardo da Vinci',
           'Michelangelo',
         ],
-        answer: 'Hans Holbein the Younger',
+        correct: 'Hans Holbein the Younger',
       },
       {
         id: '4.2',
@@ -378,7 +378,7 @@ export const BASEL = [
           'Creation of park complexes',
           'Construction of fortresses',
         ],
-        answer: 'Construction of cathedrals and churches',
+        correct: 'Construction of cathedrals and churches',
       },
       {
         id: '4.3',
@@ -390,7 +390,7 @@ export const BASEL = [
           'Studying astronomy and mathematics',
           'Invention of the first steamboat',
         ],
-        answer: 'Publication of the first scientific journals',
+        correct: 'Publication of the first scientific journals',
       },
       {
         id: '4.4',
@@ -402,7 +402,7 @@ export const BASEL = [
           'Organization of scientific conferences and debates',
           'Funding of medical research',
         ],
-        answer: 'Publication of scientific works and encyclopedias',
+        correct: 'Publication of scientific works and encyclopedias',
       },
       {
         id: '4.5',
@@ -414,7 +414,7 @@ export const BASEL = [
           'Spreading the ideas of humanism through art',
           'Creation of the first museum of fine arts',
         ],
-        answer: 'Spreading the ideas of humanism through art',
+        correct: 'Spreading the ideas of humanism through art',
       },
       {
         id: '4.6',
@@ -426,7 +426,7 @@ export const BASEL = [
           'Development of vaccines and drugs',
           'Organization of the first medical conferences',
         ],
-        answer: 'Study of anatomy and physiology of the human body',
+        correct: 'Study of anatomy and physiology of the human body',
       },
       {
         id: '4.7',
@@ -438,7 +438,7 @@ export const BASEL = [
           'Spread of book culture through publishing houses',
           'Promotion of the development of theatrical art',
         ],
-        answer: 'Foundation of a university and art academies',
+        correct: 'Foundation of a university and art academies',
       },
       {
         id: '4.8',
@@ -450,7 +450,7 @@ export const BASEL = [
           'Inviting scientists from all over the world to lectures and discussions',
           'Formation of a network of scientific schools and laboratories',
         ],
-        answer:
+        correct:
           'Publication of magazines and scientific works on various topics',
       },
       {
@@ -463,7 +463,7 @@ export const BASEL = [
           'Printing sheet music for distribution of musical works',
           'Production of decorative engravings to decorate books',
         ],
-        answer: 'Distribution of books and texts of classical literature',
+        correct: 'Distribution of books and texts of classical literature',
       },
       {
         id: '4.10',
@@ -475,7 +475,7 @@ export const BASEL = [
           'Propagation of the ideals of humanism through fine arts',
           'Promotion of the development of archaeological research through visual arts',
         ],
-        answer: 'Creation of new styles in painting and sculpture',
+        correct: 'Creation of new styles in painting and sculpture',
       },
     ],
   },
@@ -494,7 +494,7 @@ export const BASEL = [
           'Metallurgical and automotive',
           'Forestry and woodworking',
         ],
-        answer: 'Textile and chemical',
+        correct: 'Textile and chemical',
       },
       {
         id: '5.2',
@@ -506,7 +506,7 @@ export const BASEL = [
           'Reconstruction of historical monuments',
           'Expansion of green areas and parks',
         ],
-        answer: 'Development of the transport network',
+        correct: 'Development of the transport network',
       },
       {
         id: '5.3',
@@ -518,7 +518,7 @@ export const BASEL = [
           'Increasing the number of jobs',
           'Development of the social protection system',
         ],
-        answer: 'Deterioration of working conditions',
+        correct: 'Deterioration of working conditions',
       },
       {
         id: '5.4',
@@ -530,7 +530,7 @@ export const BASEL = [
           'Construction of industrial complexes',
           'Expansion of the network of streets and squares',
         ],
-        answer: 'Restoration of historical buildings',
+        correct: 'Restoration of historical buildings',
       },
       {
         id: '5.5',
@@ -541,7 +541,7 @@ export const BASEL = [
           'Decrease in consumer activity of residents',
           'Increasing cultural tourism',
         ],
-        answer: 'Increase in the volume of exports',
+        correct: 'Increase in the volume of exports',
       },
       {
         id: '5.6',
@@ -553,7 +553,7 @@ export const BASEL = [
           'Use of steam engines',
           'Development of computer technologies',
         ],
-        answer: 'Electrification of transport',
+        correct: 'Electrification of transport',
       },
       {
         id: '5.7',
@@ -565,7 +565,7 @@ export const BASEL = [
           'Creation of new schools and university institutions',
           'Decreased interest in cultural events',
         ],
-        answer: 'Expansion of the network of libraries and museums',
+        correct: 'Expansion of the network of libraries and museums',
       },
       {
         id: '5.8',
@@ -577,7 +577,7 @@ export const BASEL = [
           'Destruction of the landscape for the construction of factories',
           'Implementation of energy efficiency programs',
         ],
-        answer: 'Air and water pollution',
+        correct: 'Air and water pollution',
       },
       {
         id: '5.9',
@@ -589,7 +589,7 @@ export const BASEL = [
           'Production of medical equipment',
           'Deterioration of the health of the population',
         ],
-        answer: 'Production of medical equipment',
+        correct: 'Production of medical equipment',
       },
       {
         id: '5.10',
@@ -601,7 +601,7 @@ export const BASEL = [
           'Deepening of religious conflicts',
           'Reduction of cultural diversity',
         ],
-        answer: 'Expansion of cultural events and festivals',
+        correct: 'Expansion of cultural events and festivals',
       },
     ],
   },
@@ -620,14 +620,14 @@ export const BASEL = [
           'Basel bridge',
           'University of Basel',
         ],
-        answer: 'Basel Cathedral',
+        correct: 'Basel Cathedral',
       },
       {
         id: '6.2',
         question:
           'What architectural style prevails in Basel during the Renaissance?',
         options: ['Gothic', 'Baroque', 'Classicism', 'Renaissance'],
-        answer: 'Renaissance',
+        correct: 'Renaissance',
       },
       {
         id: '6.3',
@@ -639,7 +639,7 @@ export const BASEL = [
           'Basel bridge',
           'University of Basel',
         ],
-        answer: 'Münsterplatz Town Hall',
+        correct: 'Münsterplatz Town Hall',
       },
       {
         id: '6.4',
@@ -651,7 +651,7 @@ export const BASEL = [
           'Neoclassicism',
           'Postmodernism',
         ],
-        answer: 'Modernism',
+        correct: 'Modernism',
       },
       {
         id: '6.5',
@@ -663,14 +663,14 @@ export const BASEL = [
           'Basel bridge',
           'University of Basel',
         ],
-        answer: 'Basel Cathedral',
+        correct: 'Basel Cathedral',
       },
       {
         id: '6.6',
         question:
           'What architectural style characterizes medieval buildings in Basel?',
         options: ['Gothic', 'Baroque', 'Classicism', 'Renaissance'],
-        answer: 'Gothic',
+        correct: 'Gothic',
       },
       {
         id: '6.7',
@@ -682,14 +682,14 @@ export const BASEL = [
           'Basel bridge',
           'University of Basel',
         ],
-        answer: 'Münsterplatz Town Hall',
+        correct: 'Münsterplatz Town Hall',
       },
       {
         id: '6.8',
         question:
           'What architectural style characterizes buildings in Basel during modernism?',
         options: ['Functionalism', 'Gothic', 'Baroque', 'Renaissance'],
-        answer: 'Functionalism',
+        correct: 'Functionalism',
       },
       {
         id: '6.9',
@@ -701,14 +701,14 @@ export const BASEL = [
           'Museum of Modern Art',
           'University of Basel',
         ],
-        answer: 'Museum of Modern Art',
+        correct: 'Museum of Modern Art',
       },
       {
         id: '6.10',
         question:
           'What architectural style characterizes buildings in Basel during postmodernism?',
         options: ['Modernism', 'Gothic', 'Baroque', 'Functionalism'],
-        answer: 'Functionalism',
+        correct: 'Functionalism',
       },
     ],
   },
@@ -726,7 +726,7 @@ export const BASEL = [
           'Museum of Wasted Time',
           'Kunstgalerie Basel',
         ],
-        answer: 'Beyeler Foundation',
+        correct: 'Beyeler Foundation',
       },
       {
         id: '7.2',
@@ -738,7 +738,7 @@ export const BASEL = [
           'Basel National Museum',
           'Tinto Museum',
         ],
-        answer: 'Basel Art Museum',
+        correct: 'Basel Art Museum',
       },
       {
         id: '7.3',
@@ -750,7 +750,7 @@ export const BASEL = [
           'Tinto Museum',
           'Globe Museum',
         ],
-        answer: 'Beyeler Foundation',
+        correct: 'Beyeler Foundation',
       },
       {
         id: '7.4',
@@ -762,7 +762,7 @@ export const BASEL = [
           'Museum of Wasted Time',
           'Basel Museum of Natural History',
         ],
-        answer: 'Basel Museum of Natural History',
+        correct: 'Basel Museum of Natural History',
       },
       {
         id: '7.5',
@@ -774,7 +774,7 @@ export const BASEL = [
           'Beyeler Foundation',
           'Basel National Museum',
         ],
-        answer: 'Kunstgalerie Basel',
+        correct: 'Kunstgalerie Basel',
       },
       {
         id: '7.6',
@@ -786,7 +786,7 @@ export const BASEL = [
           'Kunstgalerie Basel',
           'Globe Museum',
         ],
-        answer: 'Kunstgalerie Basel',
+        correct: 'Kunstgalerie Basel',
       },
       {
         id: '7.7',
@@ -798,7 +798,7 @@ export const BASEL = [
           'Tinto Museum',
           'Globe Museum',
         ],
-        answer: 'Museum of Wasted Time',
+        correct: 'Museum of Wasted Time',
       },
       {
         id: '7.8',
@@ -810,7 +810,7 @@ export const BASEL = [
           'Tinto Museum',
           'Globe Museum',
         ],
-        answer: 'Basel National Museum',
+        correct: 'Basel National Museum',
       },
       {
         id: '7.9',
@@ -822,7 +822,7 @@ export const BASEL = [
           'Museum of Wasted Time',
           'Tinto Museum',
         ],
-        answer: 'Kunstgalerie Basel',
+        correct: 'Kunstgalerie Basel',
       },
       {
         id: '7.10',
@@ -834,7 +834,7 @@ export const BASEL = [
           'Museum of Wasted Time',
           'Globe Museum',
         ],
-        answer: 'Tinto Museum ',
+        correct: 'Tinto Museum ',
       },
     ],
   },

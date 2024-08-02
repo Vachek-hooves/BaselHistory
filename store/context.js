@@ -18,7 +18,7 @@ export const GameProvider = ({children}) => {
     initializeGameData();
   }, []);
 
-  const choosenLevel = async level => {
+  const choosenLevel = level => {
     switch (level) {
       case 'easy':
         return easyLevel;

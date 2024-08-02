@@ -42,7 +42,8 @@ const LevelsGrid = ({level}) => {
   }, [level]);
 
   function renderList({item, index}) {
-    // console.log(item.image);
+    // console.log(item.id);
+    const itemId = item.id;
 
     if (!item.subject) {
       return (
@@ -65,7 +66,7 @@ const LevelsGrid = ({level}) => {
 
     return (
       <Pressable
-        onPress={() => navigation.navigate('PlayGameScreen')}
+        onPress={() => navigation.navigate('PlayGameScreen', {level, itemId})}
         style={({pressed}) => [
           pressed ? [styles.pressed, {width: ITEM_SIZE}] : {width: ITEM_SIZE},
         ]}>

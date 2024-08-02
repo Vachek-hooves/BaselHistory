@@ -1,2 +1,5 @@
 import Btn from './Btn';
-export {Btn};
+import IconDone from './IconDone';
+import GameTimer from './GameTimer';
+
+export {Btn, IconDone, GameTimer};

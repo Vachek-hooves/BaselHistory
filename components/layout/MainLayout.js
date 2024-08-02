@@ -1,10 +1,13 @@
 import {SafeAreaView, View} from 'react-native';
 
-const MainLayout = ({children}) => {
+const MainLayout = ({children, style}) => {
   return (
     // <View>
     <SafeAreaView
-      style={{alignItems: 'center', flex: 1, justifyContent: 'center'}}>
+      style={[
+        style,
+        {alignItems: 'center', flex: 1, justifyContent: 'center'},
+      ]}>
       {children}
     </SafeAreaView>
     // </View>

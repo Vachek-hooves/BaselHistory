@@ -1,9 +1,9 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import {MainLayout} from '../components/layout';
+import {StyleSheet, View} from 'react-native';
+import {COLORS} from '../constant/colors';
+import GameLayout from '../components/layout/GameLayout';
 
 const PlayGameScreen = () => {
-  return <MainLayout></MainLayout>;
+  return <GameLayout></GameLayout>;
 };
 
 export default PlayGameScreen;

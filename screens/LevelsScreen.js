@@ -1,25 +1,35 @@
-import {StyleSheet, Text, Vibration, View} from 'react-native';
-import {MainLayout} from '../components/layout';
+import {Text, View} from 'react-native';
+import {MainBg, MainLayout} from '../components/layout';
 import {LevelsGrid} from '../components/levelsScreen';
-import {useContext} from 'react';
-import {GameContext} from '../store/context';
+import {COLORS} from '../constant/colors';
 
 const LevelsScreen = ({route}) => {
   const {level} = route.params;
-  const {choosenLevel} = useContext(GameContext);
-  const DATA = choosenLevel(level);
-  console.log(DATA);
 
   return (
-    <MainLayout>
-      {/* <View style={{flex: 1, justifyContent: 'center'}}> */}
-        <Text>{level}</Text>
-        <LevelsGrid data={DATA} />
-      {/* </View> */}
-    </MainLayout>
+    <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
+      <MainLayout>
+        <LevelShow level={level} />
+        <LevelsGrid level={level} />
+      </MainLayout>
+    </MainBg>
   );
 };
 
 export default LevelsScreen;
 
-const styles = StyleSheet.create({});
+const LevelShow = ({level}) => {
+  return (
+    <View
+      style={{
+        backgroundColor: COLORS.maroon,
+        paddingVertical: 20,
+        paddingHorizontal: 15,
+        borderRadius: 32,
+      }}>
+      <Text style={{fontSize: 26, color: COLORS.beige, fontWeight: '600'}}>
+        {level.toUpperCase()}
+      </Text>
+    </View>
+  );
+};

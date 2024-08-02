@@ -1,17 +1,17 @@
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {MainBg, MainLayout} from '../components/layout';
+import {Btn} from '../components/ui';
+import {COLORS} from '../constant/colors';
 
 const FlashScreen = ({navigation}) => {
   return (
     <MainBg>
       <MainLayout>
-        <Text style={styles.text}>YOU ARE WELCOME </Text>
-        <Text style={styles.text}>BASEL HISTORY QUIZ</Text>
-        <TouchableOpacity
-          style={{padding: 20, borderWidth: 1}}
-          onPress={() => navigation.navigate('MainScreen')}>
-          <Text>MAIN PAGE</Text>
-        </TouchableOpacity>
+        <View style={{marginBottom: '70%'}}>
+          <Text style={styles.text}>YOU ARE WELCOME </Text>
+          <Text style={styles.text}>BASEL HISTORY QUIZ</Text>
+        </View>
+        <Btn onPress={() => navigation.navigate('MainScreen')}>MAIN PAGE</Btn>
       </MainLayout>
     </MainBg>
   );
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     fontSize: 55,
     fontWeight: '800',
     textAlign: 'center',
-    color: 'white',
+    color: COLORS.beige,
   },
 });

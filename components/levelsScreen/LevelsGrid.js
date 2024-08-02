@@ -6,8 +6,13 @@ import {
   Dimensions,
   FlatList,
   Animated,
-  TouchableOpacity,
+  Pressable,
+  Image,
 } from 'react-native';
+import {useContext} from 'react';
+import {GameContext} from '../../store/context';
+import {COLORS} from '../../constant/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const {width} = Dimensions.get('window');
 
@@ -15,24 +20,35 @@ const SPACING = 10;
 const ITEM_SIZE = width * 0.74;
 const SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
-const LevelsGrid = ({data}) => {
+const LevelsGrid = ({level}) => {
+  const navigation = useNavigation();
+  const {choosenLevel} = useContext(GameContext);
+
   const [gameData, setGameData] = useState([]);
   const scrollX = useRef(new Animated.Value(0)).current;
+
   useEffect(() => {
-    setGameData([{key: 'leftSpacer'}, ...data, {key: 'rightSpacer'}]);
-  }, []);
+    const loadData = async () => {
+      const DATA = await choosenLevel(level); // Очікування асинхронної функції
+
+      if (Array.isArray(DATA) && DATA.length > 0) {
+        setGameData([{key: 'leftSpacer'}, ...DATA, {key: 'rightSpacer'}]);
+      } else {
+        console.error('Provided data is not an array or is empty:', DATA);
+      }
+    };
+
+    loadData();
+  }, [level]);
 
   function renderList({item, index}) {
-    console.log(item);
+    // console.log(item.image);
 
     if (!item.subject) {
       return (
         <View
-          key={1 + 1}
           style={{
             width: SPACER_ITEM_SIZE,
-            // backgroundColor: 'red',
-            // height: 200,
           }}
         />
       );
@@ -44,32 +60,35 @@ const LevelsGrid = ({data}) => {
     ];
     const translateY = scrollX.interpolate({
       inputRange,
-      outputRange: [0, -50, 0],
+      outputRange: [30, -50, 30],
     });
 
     return (
-      <View style={{width: ITEM_SIZE}}>
+      <Pressable
+        onPress={() => navigation.navigate('PlayGameScreen')}
+        style={({pressed}) => [
+          pressed ? [styles.pressed, {width: ITEM_SIZE}] : {width: ITEM_SIZE},
+        ]}>
         <Animated.View
-          style={{
-            backgroundColor: 'gray',
-            justifyContent: 'center',
-            marginHorizontal: SPACING,
-            // width: ITEM_SIZE,
-            padding: SPACING * 2,
-            borderRadius: 34,
-            transform: [{translateY}],
-          }}>
-          <Text style={{textAlign: 'center'}}>{item.subject}</Text>
+          style={[
+            styles.itemContainer,
+            {
+              transform: [{translateY}],
+            },
+          ]}>
+          <Image source={{uri: item.image}} style={styles.image} />
+          <View style={styles.textContainer}>
+            <Text style={styles.text}>{item.subject}</Text>
+          </View>
         </Animated.View>
-      </View>
+      </Pressable>
     );
   }
 
   return (
     <Animated.FlatList
-      // data={data}
       data={gameData}
-      keyExtractor={item => item.id}
+      keyExtractor={(item, index) => index.toString()}
       renderItem={renderList}
       horizontal
       contentContainerStyle={{alignItems: 'center'}}
@@ -87,4 +106,32 @@ const LevelsGrid = ({data}) => {
 
 export default LevelsGrid;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  pressed: {
+    opacity: 0.75,
+  },
+  itemContainer: {
+    backgroundColor: COLORS.maroon,
+    justifyContent: 'center',
+    marginHorizontal: SPACING,
+    padding: SPACING * 2,
+    borderRadius: 34,
+  },
+  image: {
+    width: '100%',
+    height: 350,
+    borderRadius: 20,
+  },
+  textContainer: {
+    backgroundColor: COLORS.beige,
+    marginVertical: 10,
+    borderRadius: 34,
+  },
+  text: {
+    textAlign: 'center',
+    fontSize: 20,
+    padding: 10,
+    color: COLORS.maroon,
+    fontWeight: 'bold',
+  },
+});

@@ -1,5 +1,9 @@
+
+
 export const BASEL = [
   {
+    image:
+      'https://images.unsplash.com/photo-1657123759472-247b4b1ef979?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject:
       'The foundation of the city of Basel: legends and historical facts',
     id: 'a1',
@@ -104,11 +108,14 @@ export const BASEL = [
           'She contributed to the spread of humane philosophy in hideous countries',
           'She was the founder of new teaching methods',
         ],
-        correct: 'It was one of the central points of the Renaissance in Europe',
+        correct:
+          'It was one of the central points of the Renaissance in Europe',
       },
     ],
   },
   {
+    image:
+      'https://images.unsplash.com/photo-1657123737634-a7bb19d4a6ba?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject: 'Basel in the Middle Ages: development of trade and culture',
     id: '2',
     levelQuestions: [
@@ -222,6 +229,8 @@ export const BASEL = [
     ],
   },
   {
+    image:
+      'https://images.unsplash.com/photo-1657123754751-bb4b10d22709?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject:
       'Basel Reformation: the role of the city in religious transformations',
     id: '3',
@@ -353,6 +362,8 @@ export const BASEL = [
     ],
   },
   {
+    image:
+      'https://images.unsplash.com/photo-1657123766450-dd4fbdc99af6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject: 'Basel during the Renaissance: Influence on Art and Science',
     id: '4',
     levelQuestions: [
@@ -480,8 +491,10 @@ export const BASEL = [
     ],
   },
   {
+    image:
+      'https://images.unsplash.com/photo-1710881861764-de1b599dd07e?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject:
-      'Basel in the 19th and 20th Centuries: The Transformation of the City Under the Influence of the Industrial Revolution and Modernization',
+      'Basel in the 19th and 20th Centuries: The Transformation of the City.',
     id: '5',
     levelQuestions: [
       {
@@ -606,6 +619,8 @@ export const BASEL = [
     ],
   },
   {
+    image:
+      'https://images.unsplash.com/photo-1710881862609-063176c44806?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject:
       'Basel Architecture: From Medieval Buildings to Modern Skyscrapers',
     id: '6',
@@ -713,6 +728,8 @@ export const BASEL = [
     ],
   },
   {
+    image:
+      'https://images.unsplash.com/photo-1665351118864-0c6b0c032704?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     subject: 'Basel Museums: From Art to Science',
     id: '7',
     levelQuestions: [

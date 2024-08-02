@@ -5,6 +5,7 @@ export const storeQuizzData = async (data, level) => {
     await AsyncStorage.setItem(level, JSON.stringify(data));
   } catch (error) {
     console.log('Data saving error', error);
+    return [];
   }
 };
 
@@ -17,5 +18,3 @@ export const fetchGameData = async level => {
     return [];
   }
 };
-
-

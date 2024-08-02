@@ -1,20 +1,18 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {MainLayout} from '../components/layout';
+import {MainBg, MainLayout} from '../components/layout';
+import {COLORS} from '../constant/colors';
+import {Btn} from '../components/ui';
 
 const MainScreen = ({navigation}) => {
   return (
-    <MainLayout>
-      <TouchableOpacity style={styles.btnStyle} onPress={()=>navigation.navigate('ModeScreen')}>
-        <Text>Start</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.btnStyle}>
-        <Text>Book of knowledge</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.btnStyle}>
-        <Text>Profile</Text>
-      </TouchableOpacity>
-    </MainLayout>
+    <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
+      <MainLayout>
+        <Btn onPress={() => navigation.navigate('ModeScreen')}>START</Btn>
+        <Btn>Book Of Knowladge</Btn>
+        <Btn>Profile</Btn>
+      </MainLayout>
+    </MainBg>
   );
 };
 

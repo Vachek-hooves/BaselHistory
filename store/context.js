@@ -1,4 +1,4 @@
-import {Children, createContext, useEffect, useState} from 'react';
+import {createContext, useEffect, useState} from 'react';
 import {BASEL} from '../data/basel_data';
 import {fetchGameData, storeQuizzData} from './asyncUtils';
 
@@ -18,7 +18,7 @@ export const GameProvider = ({children}) => {
     initializeGameData();
   }, []);
 
-  const choosenLevel = level => {
+  const choosenLevel = async level => {
     switch (level) {
       case 'easy':
         return easyLevel;

@@ -9,6 +9,7 @@ const LevelsScreen = ({route}) => {
   const {level} = route.params;
   const {choosenLevel} = useContext(GameContext);
   const data = choosenLevel(level);
+  
 
   return (
     <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>

@@ -23,29 +23,22 @@ const ITEM_SIZE = width * 0.74;
 const SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
 const LevelsGrid = ({level}) => {
-  const {choosenLevel, } = useContext(GameContext);
+  const {choosenLevel, easyLevel, hardLevel} = useContext(GameContext);
   const navigation = useNavigation();
   const isFocused = useIsFocused();
-
   const [gameData, setGameData] = useState([]);
   const scrollX = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    const loadData = async () => {
-      const DATA = await choosenLevel(level);
+    const DATA = choosenLevel(level);
+    console.log('LevelsGrid--', DATA);
 
-      if (Array.isArray(DATA) && DATA.length > 0) {
-        setGameData([{key: 'leftSpacer'}, ...DATA, {key: 'rightSpacer'}]);
-      } else {
-        console.error('Provided data is not an array or is empty:', DATA);
-      }
-    };
-
-    if (isFocused) {
-      // Load data only when the screen is focused
-      loadData();
+    if (Array.isArray(DATA) && DATA.length > 0) {
+      setGameData([{key: 'leftSpacer'}, ...DATA, {key: 'rightSpacer'}]);
+    } else {
+      console.error('Provided data is not an array or is empty:', DATA);
     }
-  }, [isFocused]); // Dependency on isFocused
+  }, [isFocused, easyLevel, hardLevel]);
 
   function renderList({item, index}) {
     // console.log(item.id);

@@ -16,6 +16,14 @@ export const GameProvider = ({children}) => {
   const [totalScore, setTotalScore] = useState([]);
 
   useEffect(() => {
+    console.log('easyLevel updated', easyLevel);
+  }, [easyLevel]);
+
+  // useEffect(() => {
+  //   console.log('hardLevel updated', hardLevel);
+  // }, [hardLevel]);
+
+  useEffect(() => {
     initializeGameData();
   }, []);
 
@@ -23,7 +31,6 @@ export const GameProvider = ({children}) => {
     console.log('open next level', id, level);
     try {
       const AllQuizData = await fetchGameData(level);
-      console.log(AllQuizData);
       const thisQuizIndex = AllQuizData.findIndex(quiz => quiz.id === id);
       if (thisQuizIndex !== -1 && thisQuizIndex + 1 < AllQuizData.length) {
         const updatedData = AllQuizData.map((quiz, i) =>
@@ -41,6 +48,7 @@ export const GameProvider = ({children}) => {
             break;
         }
 
+        // console.log(updatedData);
         await storeQuizzData(updatedData, level);
       }
     } catch (error) {
@@ -79,13 +87,11 @@ export const GameProvider = ({children}) => {
     }
   };
 
-
   const contextValue = {
     easyLevel,
     hardLevel,
     choosenLevel,
     nextLevelOpenHandler,
-
   };
   return (
     <GameContext.Provider value={contextValue}>{children}</GameContext.Provider>

@@ -125,6 +125,8 @@ const PlayGameScreen = ({route}) => {
           score={score}
           level={level}
           id={subjectId}
+          currentIndex={currentIndex}
+          dataLength={quizData.length - 1}
         />
       </Modal>
     </GameLayout>

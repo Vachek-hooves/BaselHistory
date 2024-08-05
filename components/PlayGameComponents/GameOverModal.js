@@ -11,13 +11,25 @@ import {COLORS} from '../../constant/colors';
 import {ModalBtn} from '../ui';
 import {GameContext} from '../../store/context';
 
-const GameOverModal = ({closeModal, restart, score, level, id}) => {
+const GameOverModal = ({
+  closeModal,
+  restart,
+  score,
+  level,
+  id,
+  currentIndex,
+  dataLength,
+}) => {
   const navigation = useNavigation();
   const {nextLevelOpenHandler} = useContext(GameContext);
 
   const nextLevelOpenCall = () => {
     nextLevelOpenHandler(id, level);
     navigation.navigate('LevelsScreen', {level: level});
+  };
+
+  const mainModeScreen = () => {
+    navigation.navigate('ModeScreen');
   };
 
   return (
@@ -37,11 +49,16 @@ const GameOverModal = ({closeModal, restart, score, level, id}) => {
           <ModalBtn onPress={closeModal}>CLOSE</ModalBtn>
           <ModalBtn onPress={restart}>RESTART</ModalBtn>
         </View>
-        {score > 1 && (
-          <View style={styles.btnContainer}>
-            <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
-          </View>
-        )}
+        {score > 0 &&
+          (currentIndex === dataLength ? (
+            <View style={styles.btnContainer}>
+              <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
+            </View>
+          ) : (
+            <View style={styles.btnContainer}>
+              <ModalBtn onPress={mainModeScreen}>MENU</ModalBtn>
+            </View>
+          ))}
       </View>
     </SafeAreaView>
   );

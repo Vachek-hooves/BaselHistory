@@ -22,8 +22,8 @@ const SPACING = 10;
 const ITEM_SIZE = width * 0.74;
 const SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
-const LevelsGrid = ({level, data}) => {
-  const {choosenLevel} = useContext(GameContext);
+const LevelsGrid = ({level}) => {
+  const {choosenLevel, } = useContext(GameContext);
   const navigation = useNavigation();
   const isFocused = useIsFocused();
 
@@ -42,10 +42,10 @@ const LevelsGrid = ({level, data}) => {
     };
 
     if (isFocused) {
-      refreshLevels();
+      // Load data only when the screen is focused
       loadData();
     }
-  }, [isFocused]);
+  }, [isFocused]); // Dependency on isFocused
 
   function renderList({item, index}) {
     // console.log(item.id);

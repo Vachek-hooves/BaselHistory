@@ -43,9 +43,10 @@ const LevelsGrid = ({level}) => {
   function renderList({item, index}) {
     // console.log(item.id);
     const itemId = item.id;
-    const subjectScore = item?.subjectScore;
+    const subjectScore = item?.subjectScore ?? null;
     const levelIsLocked = item?.isClose;
-    console.log(subjectScore)
+
+    console.log(subjectScore);
 
     if (!item.subject) {
       return (
@@ -83,6 +84,27 @@ const LevelsGrid = ({level}) => {
                 : COLORS.maroon,
             },
           ]}>
+          <View
+            style={{
+              backgroundColor: COLORS.beige,
+              width: 50,
+              height: 50,
+              borderRadius: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'center',
+              marginBottom: 10,
+            }}>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontWeight: '600',
+                fontSize: 22,
+                color: COLORS.maroon,
+              }}>
+              {subjectScore}
+            </Text>
+          </View>
           <ImageBackground source={{uri: item.image}} style={[styles.image]}>
             <View
               style={{

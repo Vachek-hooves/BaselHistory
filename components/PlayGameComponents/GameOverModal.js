@@ -21,10 +21,10 @@ const GameOverModal = ({
   dataLength,
 }) => {
   const navigation = useNavigation();
-  const {nextLevelOpenHandler} = useContext(GameContext);
+  const {updateLeveScoreAndUnlockNext} = useContext(GameContext);
 
   const nextLevelOpenCall = () => {
-    nextLevelOpenHandler(id, level);
+    updateLeveScoreAndUnlockNext(id, score, level);
     navigation.navigate('LevelsScreen', {level: level});
   };
 
@@ -49,21 +49,15 @@ const GameOverModal = ({
           <ModalBtn onPress={closeModal}>CLOSE</ModalBtn>
           <ModalBtn onPress={restart}>RESTART</ModalBtn>
         </View>
-        {score > 0 && (
+        {score > 1 ? (
           <View style={styles.btnContainer}>
             <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
           </View>
+        ) : (
+          <View style={styles.btnContainer}>
+            <ModalBtn onPress={mainModeScreen}>MENU</ModalBtn>
+          </View>
         )}
-        {/* {score > 0 &&
-          (currentIndex === dataLength ? (
-            <View style={styles.btnContainer}>
-              <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
-            </View>
-          ) : (
-            <View style={styles.btnContainer}>
-              <ModalBtn onPress={mainModeScreen}>MENU</ModalBtn>
-            </View>
-          ))} */}
       </View>
     </SafeAreaView>
   );

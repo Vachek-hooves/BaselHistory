@@ -49,7 +49,12 @@ const GameOverModal = ({
           <ModalBtn onPress={closeModal}>CLOSE</ModalBtn>
           <ModalBtn onPress={restart}>RESTART</ModalBtn>
         </View>
-        {score > 0 &&
+        {score > 0 && (
+          <View style={styles.btnContainer}>
+            <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
+          </View>
+        )}
+        {/* {score > 0 &&
           (currentIndex === dataLength ? (
             <View style={styles.btnContainer}>
               <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
@@ -58,7 +63,7 @@ const GameOverModal = ({
             <View style={styles.btnContainer}>
               <ModalBtn onPress={mainModeScreen}>MENU</ModalBtn>
             </View>
-          ))}
+          ))} */}
       </View>
     </SafeAreaView>
   );

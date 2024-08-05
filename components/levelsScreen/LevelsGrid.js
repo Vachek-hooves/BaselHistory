@@ -43,8 +43,9 @@ const LevelsGrid = ({level}) => {
   function renderList({item, index}) {
     // console.log(item.id);
     const itemId = item.id;
-
+    const subjectScore = item?.subjectScore;
     const levelIsLocked = item?.isClose;
+    console.log(subjectScore)
 
     if (!item.subject) {
       return (

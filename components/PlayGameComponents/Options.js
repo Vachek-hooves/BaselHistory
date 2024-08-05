@@ -1,14 +1,49 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../constant/colors';
 
-const Options = ({options}) => {
+const Options = ({options, onPress, disable, correctOption, currentOption}) => {
   return (
     <>
       {options.map((option, index) => (
-        <View key={index} style={styles.container}>
-          <Text style={styles.text}>{option}</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => onPress(option)}
+          disabled={disable}
+          key={index}
+          style={[
+            styles.container,
+            {
+              backgroundColor:
+                option == correctOption
+                  ? COLORS.beige
+                  : option == currentOption
+                  ? COLORS.beige
+                  : COLORS.beige,
+              borderColor:
+                option == correctOption
+                  ? COLORS.sage
+                  : option == currentOption
+                  ? COLORS.red
+                  : COLORS.mandarin,
+              borderWidth:
+                option == correctOption ? 6 : option == currentOption ? 6 : 3,
+            },
+          ]}>
+          <Text
+            style={[
+              styles.text,
+              {
+                color:
+                  option == correctOption
+                    ? COLORS.sage
+                    : option == currentOption
+                    ? COLORS.red
+                    : COLORS.maroon,
+              },
+            ]}>
+            {option}
+          </Text>
+        </TouchableOpacity>
       ))}
     </>
   );
@@ -18,17 +53,17 @@ export default Options;
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 10,
+    marginVertical: 13,
     backgroundColor: COLORS.warm,
     borderRadius: 32,
     padding: 5,
-    height: 70,
+    height: 80,
     justifyContent: 'center',
   },
   text: {
     textAlign: 'center',
     fontWeight: '800',
-    color: COLORS.maroon,
+    // color: COLORS.darkBlue,
     fontSize: 20,
   },
 });

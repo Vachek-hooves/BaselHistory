@@ -11,6 +11,6 @@ export const COLORS = {
 
   matte: '#B43F3F',
   darkBlue: '#173B45',
-
+  sage: '#1A5319',
   black: '#000000',
 };

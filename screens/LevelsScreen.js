@@ -1,10 +1,14 @@
 import {Text, View} from 'react-native';
 import {MainBg, MainLayout} from '../components/layout';
 import {LevelsGrid} from '../components/levelsScreen';
+import {useContext} from 'react';
+import {GameContext} from '../store/context';
 import {COLORS} from '../constant/colors';
 
 const LevelsScreen = ({route}) => {
   const {level} = route.params;
+  const {choosenLevel} = useContext(GameContext);
+  const data = choosenLevel(level);
 
   return (
     <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>

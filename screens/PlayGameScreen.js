@@ -1,36 +1,40 @@
 import {Modal, StyleSheet, View, Text} from 'react-native';
-import {COLORS} from '../constant/colors';
 import GameLayout from '../components/layout/GameLayout';
-import {useNavigation} from '@react-navigation/native';
 import {useContext, useEffect, useState} from 'react';
 import {GameContext} from '../store/context';
 import {
   GameOverModal,
+  NextBtn,
   Options,
   Questions,
   Statistic,
 } from '../components/PlayGameComponents';
-import {GameTimer} from '../components/ui';
 
 const PlayGameScreen = ({route}) => {
   const {choosenLevel} = useContext(GameContext);
   const subjectId = route.params.itemId;
   const level = route.params.level;
+  const [dataSet, setDataSet] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentOption, setCurrectOption] = useState(null);
   const [correctOption, setCorrectOption] = useState(null);
   const [disableOption, setDisableOption] = useState(false);
   const [score, setScore] = useState(0);
   const [next, setNext] = useState(false);
-  const [levelIDone, setLevelIsDone] = useState(false);
+  //   const [levelIDone, setLevelIsDone] = useState(false);
   const [timerFinish, setTimerFinish] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const dataSet = choosenLevel(level);
-  const questions = dataSet?.find(quiz => quiz.id === subjectId).levelQuestions;
+  //   const dataSet = choosenLevel(level);
 
-  const thisQuestion = questions[currentIndex].question;
-  const thisOptions = questions[currentIndex].options;
+  useEffect(() => {
+    const data = choosenLevel(level);
+    if (Array.isArray(data)) {
+      setDataSet(data);
+    } else {
+      console.error('Invalid data returned from choosenLevel:', data);
+    }
+  }, [choosenLevel, level]);
 
   useEffect(() => {
     if (timerFinish) {
@@ -38,20 +42,90 @@ const PlayGameScreen = ({route}) => {
     }
   }, [timerFinish]);
 
+  if (!dataSet) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
+  const quizData = dataSet.find(quiz => quiz.id === subjectId);
+
+  if (!quizData || !Array.isArray(quizData.levelQuestions)) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text>No data found for the selected quiz</Text>
+      </View>
+    );
+  }
+
+  const questions = quizData.levelQuestions;
+  const thisQuestion = questions[currentIndex]?.question || '';
+  const thisOptions = questions[currentIndex]?.options || [];
+  const thisAnswer = questions[currentIndex]?.correct || null;
+
+  const checkValidation = selectedOption => {
+    const correct = thisAnswer;
+    setCurrectOption(selectedOption);
+    setCorrectOption(correct);
+    setDisableOption(true);
+    console.log(selectedOption, correct);
+    if (selectedOption === correct) {
+      setScore(score + 1);
+    }
+    setNext(true);
+  };
+
+  const showNext = () => {
+    if (currentIndex === questions.length - 1) {
+      setShowModal(true);
+    } else {
+      setCurrentIndex(currentIndex + 1);
+      setCurrectOption(null);
+      setCorrectOption(null);
+      setDisableOption(false);
+      setNext(false);
+    }
+  };
+
+  const restartGame = () => {
+    setShowModal(false);
+    setCurrentIndex(0);
+    setCurrectOption(null);
+    setCorrectOption(null);
+    setScore(0);
+    setNext(false);
+    setDisableOption(false);
+    setTimerFinish(false);
+  };
+
   return (
     <GameLayout>
       <Statistic
         score={score}
         length={questions.length}
-        currentIndex={currentIndex}
+        currentIndex={currentIndex + 1}
         level={level}
         setTimeOut={setTimerFinish}
       />
       <Questions question={thisQuestion} />
-      <Options options={thisOptions} />
-      {next && <NextBtn />}
-      <Modal visible={showModal} animationType="slide" transparent={true} >
-        <GameOverModal closeModal={() => setShowModal(false)} />
+      <Options
+        options={thisOptions}
+        onPress={checkValidation}
+        disable={disableOption}
+        correctOption={correctOption}
+        currentOption={currentOption}
+      />
+      {next && <NextBtn onPress={showNext} />}
+      <Modal visible={showModal} animationType="slide" transparent={true}>
+        <GameOverModal
+          closeModal={() => setShowModal(false)}
+          restart={() => restartGame()}
+          score={score}
+          level={level}
+          id={subjectId}
+        />
       </Modal>
     </GameLayout>
   );

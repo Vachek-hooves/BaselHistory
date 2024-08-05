@@ -6,7 +6,7 @@ const IconDone = () => {
     <View>
       <Image
         source={require('../../assets/img/icons/check.png')}
-        style={{width: 30, height: 30, tintColor: COLORS.warm}}
+        style={{width: 30, height: 30, tintColor: COLORS.sage}}
       />
     </View>
   );

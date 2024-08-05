@@ -8,11 +8,13 @@ import {
   Animated,
   Pressable,
   Image,
+  ImageBackground,
 } from 'react-native';
 import {useContext} from 'react';
 import {GameContext} from '../../store/context';
 import {COLORS} from '../../constant/colors';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useIsFocused} from '@react-navigation/native';
+import {IconLock} from '../ui';
 
 const {width} = Dimensions.get('window');
 
@@ -20,16 +22,17 @@ const SPACING = 10;
 const ITEM_SIZE = width * 0.74;
 const SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
-const LevelsGrid = ({level}) => {
-  const navigation = useNavigation();
+const LevelsGrid = ({level, data}) => {
   const {choosenLevel} = useContext(GameContext);
+  const navigation = useNavigation();
+  const isFocused = useIsFocused();
 
   const [gameData, setGameData] = useState([]);
   const scrollX = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     const loadData = async () => {
-      const DATA = await choosenLevel(level); // Очікування асинхронної функції
+      const DATA = await choosenLevel(level);
 
       if (Array.isArray(DATA) && DATA.length > 0) {
         setGameData([{key: 'leftSpacer'}, ...DATA, {key: 'rightSpacer'}]);
@@ -38,12 +41,17 @@ const LevelsGrid = ({level}) => {
       }
     };
 
-    loadData();
-  }, [level]);
+    if (isFocused) {
+      refreshLevels();
+      loadData();
+    }
+  }, [isFocused]);
 
   function renderList({item, index}) {
     // console.log(item.id);
     const itemId = item.id;
+
+    const levelIsLocked = item?.isClose;
 
     if (!item.subject) {
       return (
@@ -66,6 +74,7 @@ const LevelsGrid = ({level}) => {
 
     return (
       <Pressable
+        disabled={levelIsLocked}
         onPress={() => navigation.navigate('PlayGameScreen', {level, itemId})}
         style={({pressed}) => [
           pressed ? [styles.pressed, {width: ITEM_SIZE}] : {width: ITEM_SIZE},
@@ -75,12 +84,37 @@ const LevelsGrid = ({level}) => {
             styles.itemContainer,
             {
               transform: [{translateY}],
+              backgroundColor: levelIsLocked
+                ? COLORS.black + 90
+                : COLORS.maroon,
             },
           ]}>
-          <Image source={{uri: item.image}} style={styles.image} />
+          <ImageBackground source={{uri: item.image}} style={[styles.image]}>
+            <View
+              style={{
+                backgroundColor: levelIsLocked ? COLORS.black + 90 : null,
+                flex: 1,
+              }}
+            />
+          </ImageBackground>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>{item.subject}</Text>
+            <Text
+              style={[
+                styles.text,
+                {color: levelIsLocked ? COLORS.black + 40 : COLORS.maroon},
+              ]}>
+              {item.subject}
+            </Text>
           </View>
+          {levelIsLocked ? (
+            <View
+              style={{
+                position: 'absolute',
+                left: '40%',
+              }}>
+              <IconLock />
+            </View>
+          ) : null}
         </Animated.View>
       </Pressable>
     );
@@ -117,6 +151,7 @@ const styles = StyleSheet.create({
     marginHorizontal: SPACING,
     padding: SPACING * 2,
     borderRadius: 34,
+    position: 'relative',
   },
   image: {
     width: '100%',
@@ -132,7 +167,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     padding: 10,
-    color: COLORS.maroon,
+    // color: COLORS.maroon,
     fontWeight: 'bold',
   },
 });

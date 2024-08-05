@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import {COLORS} from '../../constant/colors';
 
 const GameTimer = ({setTimeOut}) => {
-  const [timer, setTimer] = useState(1);
+  const [timer, setTimer] = useState(70);
 
   useEffect(() => {
     const interval = setInterval(() => {

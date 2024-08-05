@@ -12,7 +12,7 @@ const Statistic = ({score, length, currentIndex, level, setTimeOut}) => {
   return (
     <View style={styles.rootContainer}>
       <View style={styles.doneContainer}>
-        <Text style={styles.text}>{score}</Text>
+        <Text style={[styles.text,{color:COLORS.sage}]}>{score}</Text>
         <IconDone />
       </View>
 

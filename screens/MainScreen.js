@@ -9,8 +9,10 @@ const MainScreen = ({navigation}) => {
     <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
       <MainLayout>
         <Btn onPress={() => navigation.navigate('ModeScreen')}>START</Btn>
-        <Btn>Book Of Knowladge</Btn>
-        <Btn>Profile</Btn>
+        <Btn onPress={() => navigation.navigate('BookScreen')}>
+          Book Of Knowladge
+        </Btn>
+        <Btn onPress={() => navigation.navigate('ProfileScreen')}>Profile</Btn>
       </MainLayout>
     </MainBg>
   );

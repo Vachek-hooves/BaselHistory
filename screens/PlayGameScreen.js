@@ -24,8 +24,7 @@ const PlayGameScreen = ({route}) => {
   //   const [levelIDone, setLevelIsDone] = useState(false);
   const [timerFinish, setTimerFinish] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
-  //   const dataSet = choosenLevel(level);
+  const [resetTimer, setResetTimer] = useState(false);
 
   useEffect(() => {
     const data = choosenLevel(level);
@@ -98,6 +97,8 @@ const PlayGameScreen = ({route}) => {
     setNext(false);
     setDisableOption(false);
     setTimerFinish(false);
+    setResetTimer(true);
+    setTimeout(() => setResetTimer(false), 100);
   };
 
   return (
@@ -108,6 +109,7 @@ const PlayGameScreen = ({route}) => {
         currentIndex={currentIndex + 1}
         level={level}
         setTimeOut={setTimerFinish}
+        resetTimer={resetTimer}
       />
       <Questions question={thisQuestion} />
       <Options

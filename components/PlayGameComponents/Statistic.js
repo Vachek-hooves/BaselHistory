@@ -5,14 +5,21 @@ import {IconDone} from '../ui';
 import GameTimer from '../ui/GameTimer';
 import IconTimer from '../ui/IconTimer';
 
-const Statistic = ({score, length, currentIndex, level, setTimeOut}) => {
+const Statistic = ({
+  score,
+  length,
+  currentIndex,
+  level,
+  setTimeOut,
+  resetTimer,
+}) => {
   if (!level) {
     return null;
   }
   return (
     <View style={styles.rootContainer}>
       <View style={styles.doneContainer}>
-        <Text style={[styles.text,{color:COLORS.sage}]}>{score}</Text>
+        <Text style={[styles.text, {color: COLORS.sage}]}>{score}</Text>
         <IconDone />
       </View>
 
@@ -20,7 +27,7 @@ const Statistic = ({score, length, currentIndex, level, setTimeOut}) => {
         <View
           style={{justifyContent: 'center', alignItems: 'center', width: 40}}>
           <IconTimer />
-          <GameTimer setTimeOut={setTimeOut} />
+          <GameTimer setTimeOut={setTimeOut} resetTimer={resetTimer} />
         </View>
       )}
       <Text style={styles.text}>

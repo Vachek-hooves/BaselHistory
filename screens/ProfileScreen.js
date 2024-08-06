@@ -1,11 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {MainBg, MainLayout} from '../components/layout';
+import {COLORS} from '../constant/colors';
 
 const ProfileScreen = () => {
   return (
-    <View>
-      <Text>ProfileScreen</Text>
-    </View>
+    <MainBg>
+      <MainLayout style={{backgroundColor: COLORS.black + 90}}></MainLayout>
+    </MainBg>
   );
 };
 

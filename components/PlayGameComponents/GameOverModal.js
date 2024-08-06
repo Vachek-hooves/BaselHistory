@@ -50,8 +50,19 @@ const GameOverModal = ({
           <ModalBtn onPress={restart}>RESTART</ModalBtn>
         </View>
         {score > 6 ? (
-          <View style={styles.btnContainer}>
-            <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
+          <View>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontSize: 20,
+                fontWeight: '600',
+                color: COLORS.maroon,
+              }}>
+              Congrats. YOU WOOOOON!!!
+            </Text>
+            <View style={styles.btnContainer}>
+              <ModalBtn onPress={nextLevelOpenCall}>NEXT GAME</ModalBtn>
+            </View>
           </View>
         ) : (
           <View>

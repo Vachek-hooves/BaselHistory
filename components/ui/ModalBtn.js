@@ -13,7 +13,7 @@ export default ModalBtn;
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 8,
+    paddingVertical: 15,
     marginVertical: 10,
     backgroundColor: COLORS.beige,
     borderRadius: 22,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     fontWeight: '600',
-    fontSize: 20,
+    fontSize: 18,
     color: COLORS.maroon,
   },
 });

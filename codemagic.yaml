@@ -21,7 +21,7 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd ios && pod install
-          - name: Set Info.plist values
+      - name: Set Info.plist values
         script: | 
           PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
           PLIST_BUDDY=/usr/libexec/PlistBuddy

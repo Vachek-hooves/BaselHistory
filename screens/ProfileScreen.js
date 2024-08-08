@@ -1,16 +1,10 @@
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, TextInput, View} from 'react-native';
 import {MainBg, MainLayout} from '../components/layout';
 import {useState, useEffect} from 'react';
 import {COLORS} from '../constant/colors';
 import {getProfile, submitProfile} from '../store/asyncUtils';
 import ImagePicker from '../components/ui/ImagePicker';
-import {Btn, ModalBtn} from '../components/ui';
+import {IconReturn, ModalBtn} from '../components/ui';
 import Details from '../components/ProfileScreen/Details';
 
 const ProfileScreen = () => {
@@ -56,7 +50,8 @@ const ProfileScreen = () => {
 
   return (
     <MainBg>
-      <MainLayout style={{backgroundColor: COLORS.black + 90}}>
+      <MainLayout
+        style={{backgroundColor: COLORS.black + 90, justifyContent: 'center'}}>
         {profile ? (
           <Details details={profile} />
         ) : (
@@ -73,9 +68,9 @@ const ProfileScreen = () => {
             <View
               style={{
                 backgroundColor: COLORS.beige,
-                padding: 10,
+                padding: 15,
                 borderRadius: 90,
-                marginVertical:30
+                marginVertical: 35,
               }}>
               <ImagePicker saveImage={image => userImage(image)}>
                 <Text
@@ -96,6 +91,9 @@ const ProfileScreen = () => {
             </View>
           </View>
         )}
+        <View style={{position: 'absolute', bottom: 60, right: 70}}>
+          <IconReturn />
+        </View>
       </MainLayout>
     </MainBg>
   );

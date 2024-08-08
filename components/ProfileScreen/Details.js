@@ -61,9 +61,9 @@ const Details = ({details}) => {
               </Text>
             </View>
           </ImagePicker>
-          <Btn onPress={()=>navigation.navigate('MainScreen')}>
+          {/* <Btn onPress={()=>navigation.navigate('MainScreen')}>
             <Text>Main Menu</Text>
-          </Btn>
+          </Btn> */}
         </View>
       )}
     </View>

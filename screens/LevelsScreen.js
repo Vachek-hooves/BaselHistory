@@ -1,22 +1,22 @@
-import {Text, View} from 'react-native';
+import {Text, View, Dimensions, StyleSheet} from 'react-native';
 import {MainBg, MainLayout} from '../components/layout';
 import {LevelsGrid} from '../components/levelsScreen';
-import {useContext} from 'react';
-import {GameContext} from '../store/context';
 import {COLORS} from '../constant/colors';
-import {IconReturn} from '../components/ui';
+import {IconReset, IconReturn} from '../components/ui';
+
+const {width} = Dimensions.get('window');
+const ITEM_SIZE = width * 0.6;
 
 const LevelsScreen = ({route}) => {
   const {level} = route.params;
-  const {choosenLevel} = useContext(GameContext);
-  const data = choosenLevel(level);
 
   return (
     <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
       <MainLayout>
         <LevelShow level={level} />
         <LevelsGrid level={level} />
-        <View style={{position: 'absolute', bottom: 60, right: 70}}>
+        <View style={styles.btnContainer}>
+          <IconReset level={level} />
           <IconReturn />
         </View>
       </MainLayout>
@@ -41,3 +41,14 @@ const LevelShow = ({level}) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  btnContainer: {
+    position: 'absolute',
+    bottom: 60,
+    right: 70,
+    flexDirection: 'row',
+    gap: 110,
+    width: ITEM_SIZE,
+  },
+});

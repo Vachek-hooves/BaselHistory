@@ -9,15 +9,16 @@ export const GameContext = createContext({
   nextLevelOpenHandler: () => [],
   setLevelScore: () => [],
   updateLevelScoreAndUnlockNext: () => [],
+  resetLevelHandler: () => {},
 });
 
 export const GameProvider = ({children}) => {
   const [easyLevel, setEasyLevel] = useState([]);
   const [hardLevel, setHardLevel] = useState([]);
 
-  useEffect(() => {
-    console.log('easyLevel updated', easyLevel);
-  }, [easyLevel]);
+  // useEffect(() => {
+  //   console.log('easyLevel updated', easyLevel);
+  // }, [easyLevel]);
 
   useEffect(() => {
     initializeGameData();
@@ -84,11 +85,29 @@ export const GameProvider = ({children}) => {
     }
   };
 
+  const resetLevelHandler = async level => {
+    console.log(level);
+    try {
+      await storeQuizzData(BASEL, level);
+
+      switch (level) {
+        case 'easy':
+          return setEasyLevel(BASEL);
+        case 'hard':
+          return setHardLevel(BASEL);
+        default:
+          break;
+      }
+    } catch (error) {
+      console.log('data reset failure', error);
+    }
+  };
   const contextValue = {
     easyLevel,
     hardLevel,
     choosenLevel,
     updateLeveScoreAndUnlockNext,
+    resetLevelHandler,
   };
   return (
     <GameContext.Provider value={contextValue}>{children}</GameContext.Provider>

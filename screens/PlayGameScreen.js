@@ -69,7 +69,7 @@ const PlayGameScreen = ({route}) => {
     setCurrectOption(selectedOption);
     setCorrectOption(correct);
     setDisableOption(true);
-    console.log(selectedOption, correct);
+    // console.log(selectedOption, correct);
     if (selectedOption === correct) {
       setScore(score + 1);
     }

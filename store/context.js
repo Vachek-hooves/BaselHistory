@@ -6,7 +6,6 @@ export const GameContext = createContext({
   easyLevel: [],
   hardLevel: [],
   choosenLevel: () => [],
-  //   saveLevelPoints: [],
   nextLevelOpenHandler: () => [],
   setLevelScore: () => [],
   updateLevelScoreAndUnlockNext: () => [],
@@ -15,44 +14,14 @@ export const GameContext = createContext({
 export const GameProvider = ({children}) => {
   const [easyLevel, setEasyLevel] = useState([]);
   const [hardLevel, setHardLevel] = useState([]);
-  // const [totalScore, setTotalScore] = useState([]);
 
   useEffect(() => {
     console.log('easyLevel updated', easyLevel);
   }, [easyLevel]);
 
-  // useEffect(() => {
-  //   console.log('hardLevel updated', hardLevel);
-  // }, [hardLevel]);
-
   useEffect(() => {
     initializeGameData();
   }, []);
-
-  // const setLevelScore = async (id, score, level) => {
-  //   try {
-  //     const quizToUpdate = await fetchGameData(level);
-  //     const updatedData = quizToUpdate.map(quiz => {
-  //       if (quiz.id === id) {
-  //         console.log('QUIZ TO CHANGE---', quiz);
-  //         return {...quiz, subjectScore: score};
-  //       }
-  //       return quiz;
-  //     });
-  //     await storeQuizzData(updatedData, level);
-
-  //     switch (level) {
-  //       case 'easy':
-  //         setEasyLevel(updatedData);
-  //         break;
-  //       case 'hard':
-  //         setHardLevel(updatedData);
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   } catch (error) {}
-  // };
 
   const updateLeveScoreAndUnlockNext = async (id, score, level) => {
     try {
@@ -83,37 +52,6 @@ export const GameProvider = ({children}) => {
       }
     } catch (error) {}
   };
-
-  // const nextLevelOpenHandler = async (id, level, score) => {
-  //   console.log('open next level', id, level);
-  //   try {
-  //     const AllQuizData = await fetchGameData(level);
-  //     const thisQuizIndex = AllQuizData.findIndex(quiz => quiz.id === id);
-  //     if (thisQuizIndex !== -1 && thisQuizIndex + 1 < AllQuizData.length) {
-  //       const updatedData = AllQuizData.map((quiz, i) =>
-  //         i === thisQuizIndex + 1
-  //           ? {...quiz, isClose: false, subjectScore: score}
-  //           : quiz,
-  //       );
-  //       await storeQuizzData(updatedData, level);
-
-  //       switch (level) {
-  //         case 'easy':
-  //           setEasyLevel(updatedData);
-  //           break;
-  //         case 'hard':
-  //           setHardLevel(updatedData);
-  //           break;
-  //         default:
-  //           break;
-  //       }
-
-  //       // console.log(updatedData);
-  //     }
-  //   } catch (error) {
-  //     console.log('error accured', error);
-  //   }
-  // };
 
   const choosenLevel = level => {
     switch (level) {
@@ -150,8 +88,6 @@ export const GameProvider = ({children}) => {
     easyLevel,
     hardLevel,
     choosenLevel,
-    // nextLevelOpenHandler,
-    // setLevelScore,
     updateLeveScoreAndUnlockNext,
   };
   return (

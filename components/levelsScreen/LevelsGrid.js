@@ -31,7 +31,7 @@ const LevelsGrid = ({level}) => {
 
   useEffect(() => {
     const DATA = choosenLevel(level);
-    console.log('LevelsGrid--', DATA);
+    // console.log('LevelsGrid--', DATA);
 
     if (Array.isArray(DATA) && DATA.length > 0) {
       setGameData([{key: 'leftSpacer'}, ...DATA, {key: 'rightSpacer'}]);
@@ -46,7 +46,7 @@ const LevelsGrid = ({level}) => {
     const subjectScore = item?.subjectScore ?? null;
     const levelIsLocked = item?.isClose;
 
-    console.log(subjectScore);
+    // console.log(subjectScore);
 
     if (!item.subject) {
       return (

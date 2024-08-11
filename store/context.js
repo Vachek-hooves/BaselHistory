@@ -16,10 +16,6 @@ export const GameProvider = ({children}) => {
   const [easyLevel, setEasyLevel] = useState([]);
   const [hardLevel, setHardLevel] = useState([]);
 
-  // useEffect(() => {
-  //   console.log('easyLevel updated', easyLevel);
-  // }, [easyLevel]);
-
   useEffect(() => {
     initializeGameData();
   }, []);

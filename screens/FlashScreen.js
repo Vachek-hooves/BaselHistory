@@ -1,7 +1,6 @@
 import {StyleSheet, Text, View, Animated} from 'react-native';
 import {useEffect, useRef} from 'react';
 import {MainBg, MainLayout} from '../components/layout';
-import {Btn} from '../components/ui';
 import {COLORS} from '../constant/colors';
 
 const FlashScreen = ({navigation}) => {
@@ -28,7 +27,6 @@ const FlashScreen = ({navigation}) => {
           </Text>
           <Text style={styles.text}>BASEL HISTORY QUIZ</Text>
         </View>
-        {/* <Btn onPress={() => navigation.navigate('MainScreen')}>MAIN PAGE</Btn> */}
       </MainLayout>
     </MainBg>
   );

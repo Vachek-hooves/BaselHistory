@@ -1,4 +1,10 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {MainBg, MainLayout} from '../components/layout';
 import {COLORS} from '../constant/colors';
 import {book} from '../data/bookOfKnoladge';
@@ -6,7 +12,10 @@ import {IconReturn} from '../components/ui';
 
 const BookScreen = () => {
   return (
-    <MainBg>
+    // <MainBg>
+    <ImageBackground
+      style={{flex: 1}}
+      source={require('../assets/img/bg/bcgr.png')}>
       <MainLayout style={{backgroundColor: COLORS.black + 90}}>
         <View style={{height: '85%'}}>
           <ScrollView
@@ -26,7 +35,8 @@ const BookScreen = () => {
       <View style={{position: 'absolute', bottom: 60, right: 70}}>
         <IconReturn />
       </View>
-    </MainBg>
+      {/* // </MainBg> */}
+    </ImageBackground>
   );
 };
 

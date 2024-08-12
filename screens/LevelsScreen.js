@@ -11,7 +11,7 @@ const LevelsScreen = ({route}) => {
   const {level} = route.params;
 
   return (
-    <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
+    <MainBg style={{flex: 1}}>
       <MainLayout>
         <LevelShow level={level} />
         <LevelsGrid level={level} />

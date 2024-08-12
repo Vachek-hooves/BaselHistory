@@ -51,7 +51,7 @@ const ProfileScreen = () => {
   return (
     <MainBg>
       <MainLayout
-        style={{backgroundColor: COLORS.black + 90, justifyContent: 'center'}}>
+        style={{ justifyContent: 'center'}}>
         {profile ? (
           <Details details={profile} />
         ) : (

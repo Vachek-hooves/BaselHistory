@@ -14,7 +14,7 @@ export default Questions;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: COLORS.maroon,
+    // backgroundColor: COLORS.maroon,
     paddingVertical: 10,
     borderRadius: 32,
     height: 150,
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     fontWeight: '700',
-    color: COLORS.warm,
+    // color: COLORS.warm,
+    color: COLORS.maroon,
   },
 });

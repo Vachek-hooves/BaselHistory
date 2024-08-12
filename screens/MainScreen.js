@@ -6,7 +6,7 @@ import {Btn} from '../components/ui';
 
 const MainScreen = ({navigation}) => {
   return (
-    <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
+    <MainBg style={{flex: 1, }}>
       <MainLayout style={{justifyContent: 'center'}}>
         <Btn onPress={() => navigation.navigate('ModeScreen')}>START</Btn>
         <Btn onPress={() => navigation.navigate('BookScreen')}>

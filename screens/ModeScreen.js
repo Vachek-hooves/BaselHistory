@@ -5,7 +5,7 @@ import {Btn, IconReturn} from '../components/ui';
 
 const ModeScreen = ({navigation}) => {
   return (
-    <MainBg style={{flex: 1, backgroundColor: COLORS.black + 90}}>
+    <MainBg style={{flex: 1}}>
       <MainLayout style={{justifyContent: 'center'}}>
         <Btn
           onPress={() => navigation.navigate('LevelsScreen', {level: 'easy'})}>

@@ -16,7 +16,7 @@ export default GameLayout;
 const styles = StyleSheet.create({
   rootContainer: {backgroundColor: COLORS.beige, flex: 1, padding: 10},
   subContainer: {
-    backgroundColor: COLORS.maroon,
+    // backgroundColor: COLORS.maroon,
     flex: 1,
     padding: 10,
     borderRadius: 26,
